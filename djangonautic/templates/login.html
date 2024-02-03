@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+     <script src='main.js'></script>
+     <style>
+      body {
+          background-color: #333;
+          color: #fff;
+          font-family: Arial, sans-serif;
+          text-align: center;
+      }
+
+      form {
+          max-width: 400px;
+          margin: 50px auto;
+          padding: 20px;
+          background-color: #444;
+          border-radius: 10px;
+      }
+
+      input {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          box-sizing: border-box;
+          border: 1px solid #666;
+          border-radius: 5px;
+          background-color: #555;
+          color: #fff;
+          outline: none;
+      }
+
+      input[type="submit"] {
+          background-color: #007BFF;
+          color: #fff;
+          cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+          background-color: #0056b3;
+      }
+
+      div {
+          margin-top: 20px;
+      }
+
+      h3 {
+          color: #28a745;
+      }
+  </style>
+</head>
+<body>
+
+      <form action="login" method="post">
+        {% csrf_token%}
+        <input class="token" type="text" name="username" placeholder="username"><br>
+        <input class="token" type="text" name="password" placeholder="password"><br>
+        <input class="token" type="submit">
+
+        <div>
+            {% for message in messages %}
+            <h3>{{message}} </h3>
+            {% endfor %}
+         </div>
+
+
+</body>
+</html>
